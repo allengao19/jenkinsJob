@@ -40,7 +40,6 @@ pipeline {
                 sh 'bash integration-tests.sh'
             }
         }
-
         stage('Deploy to Production') {
             steps {
                 // use heroku to deploy
