@@ -1,0 +1,23 @@
+{
+  "name": "jenkinsjob",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allengao19/jenkinsJob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allengao19/jenkinsJob/issues"
+  },
+  "homepage": "https://github.com/allengao19/jenkinsJob#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.50.0"
+  }
+}

@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Code Analysis') {
             steps {
-                // Use SonarQube for code analysis
-                sh 'mvn sonar:sonar'
+                // Use Eslint for code analysis
+                sh 'npx eslint .'
             }
         }
         stage('Security Scan') {
