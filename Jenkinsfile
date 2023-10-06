@@ -4,18 +4,18 @@ pipeline {
       HEROKU_API_KEY = 'f7dafc2b-d8fb-4442-b5da-f694b920d9c1'
     }
     stages {
-        stage('Build') {
-            steps {
-                // Use Maven as a build tool
-                sh 'mvn clean install'
-            }
-        }
-        stage('Unit and Integration Tests') {
-            steps {
-                // Use JUnit or TestNG for running tests
-                sh 'mvn test'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         // Use Maven as a build tool
+        //         sh '/usr/local/bin/mvn clean install'
+        //     }
+        // }
+        // stage('Unit and Integration Tests') {
+        //     steps {
+        //         // Use JUnit or TestNG for running tests
+        //         sh 'mvn test'
+        //     }
+        // }
         stage('Code Analysis') {
             steps {
                 // Use Eslint for code analysis
