@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+      HEROKU_API_KEY = 'f7dafc2b-d8fb-4442-b5da-f694b920d9c1'
+    }
     stages {
         stage('Build') {
             steps {
@@ -21,15 +24,16 @@ pipeline {
         }
         stage('Security Scan') {
             steps {
-                // Use OWASP Dependency-Check as security scanning tool
-                sh 'dependency-check.sh --project MyProject --scan ./ -f ALL'
+                // Use npm audit for security scanning
+                sh 'npm audit'
             }
         }
+
         stage('Deploy to Staging') {
             steps {
                 // use heroku to stage
                 sh '''
-                heroku login --api-key $HEROKU_API_KEY
+                heroku login $HEROKU_API_KEY
                 heroku git:remote -a jenkins-job
                 git push heroku master
                 '''
@@ -44,7 +48,7 @@ pipeline {
             steps {
                 // use heroku to deploy
                 sh '''
-                heroku login --api-key $HEROKU_API_KEY
+                heroku login $HEROKU_API_KEY
                 heroku git:remote -a jenkins-job
                 git push heroku master
                 '''
